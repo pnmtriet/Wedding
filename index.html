@@ -12,12 +12,19 @@
         rel="stylesheet">
     <style>
         :root {
-            /* Tông màu kem gấm tệp với ảnh nền bạn gửi */
+
             --bg-paper: #F3EFE6;
             --gold-accent: #D4AF37;
             --text-red: #A31D1D;
             --song-hy-pink: #c2185b;
             --light-gold: rgba(212, 175, 55, 0.4);
+        }
+
+        @font-face {
+            font-family: 'Daughter';
+            src: url('font/1.ttf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
         }
 
         * {
@@ -34,12 +41,10 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* LỚP NỀN CHÍNH: SỬ DỤNG ẢNH KHUNG HOA BẠN GỬI */
         .main-card {
             width: 100vw;
             height: 100vh;
             background-color: var(--bg-paper);
-            /* Thay thế bằng ảnh khung hoa mẫu đơn của bạn */
             background-image:
                 linear-gradient(rgba(243, 239, 230, 0.1), rgba(243, 239, 230, 0.1)),
                 url('http://googleusercontent.com/image_generation_content/0');
@@ -55,7 +60,6 @@
             isolation: isolate;
         }
 
-        /* KHUNG VIỀN VÀNG TRONG ẢNH (Bổ sung thêm hiệu ứng lấp lánh nhẹ) */
         .frame-inner-overlay {
             position: absolute;
             top: 50px;
@@ -67,7 +71,6 @@
             pointer-events: none;
         }
 
-        /* NỘI DUNG DỮ LIỆU */
         .content-container {
             position: relative;
             z-index: 20;
@@ -77,7 +80,6 @@
             transition: opacity 1s ease;
         }
 
-        /* TIÊU ĐỀ */
         .title-label {
             font-family: 'Playfair Display', serif;
             font-size: 5.5rem;
@@ -93,7 +95,6 @@
             animation: fadeInDown 1.2s ease forwards 0.2s;
         }
 
-        /* KHỐI TÊN & SONG HỶ */
         .center-group {
             display: flex;
             justify-content: center;
@@ -106,7 +107,7 @@
         }
 
         .name-txt {
-            font-family: 'Pinyon Script', cursive;
+            font-family: 'Daughter', 'Pinyon Script', cursive;
             font-size: 7.5rem;
             color: var(--text-red);
             flex: 1;
@@ -134,7 +135,7 @@
             animation: slideInRight 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 1s;
         }
 
-        /* SONG HỶ TRUNG TÂM - TO DẦN ĐẬM DẦN */
+
         .song-hy-wrap {
             width: 180px;
             height: 180px;
@@ -159,7 +160,7 @@
             filter: drop-shadow(0 0 10px rgba(163, 29, 29, 0.1));
         }
 
-        /* LỜI CẢM ƠN - HẠ THẤP */
+
         .thank-you-msg {
             font-family: 'Great Vibes', cursive;
             font-size: 2.2rem;
@@ -174,7 +175,7 @@
             animation: fadeInUp 1.2s ease forwards 1.6s;
         }
 
-        /* FOOTER NGÀY THÁNG */
+
         .footer-date-container {
             margin-top: 40px;
             opacity: 0;
@@ -209,7 +210,7 @@
             font-weight: 400;
         }
 
-        /* HIỆU ỨNG CÁNH HOA RƠI */
+
         .rose-petal {
             position: absolute;
             z-index: 30;
@@ -227,7 +228,7 @@
             animation: twinkle var(--dur) ease-in-out infinite;
         }
 
-        /* ANIMATIONS */
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -345,7 +346,7 @@
             }
         }
 
-        /* HOA GÓC - JFIF */
+
         .flower-corner {
             position: absolute;
             width: 260px;
@@ -363,7 +364,7 @@
             display: block;
         }
 
-        /* Vị trí 4 góc */
+
         .fc-tl {
             top: -30px;
             left: -30px;
@@ -388,7 +389,7 @@
             transform-origin: bottom right;
         }
 
-        /* Hình ảnh bên phải và dưới: lật đối xứng */
+
         .fc-tl img {
             transform: scaleX(-1);
         }
@@ -401,7 +402,7 @@
             transform: scaleY(-1);
         }
 
-        /* Animations xuất hiện */
+
         .loaded .fc-tl {
             animation: fcEnterTL 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.3s, fcSway 9s ease-in-out 1.8s infinite;
         }
@@ -478,7 +479,7 @@
             }
         }
 
-        /* TỐI ƯU TV */
+
         @media (min-width: 1900px) {
             .name-txt {
                 font-size: 9rem;
@@ -513,22 +514,21 @@
 <body>
 
     <div class="main-card">
-        <!-- KHUNG VIỀN PHỤ TRÊN NỀN -->
+
         <div class="frame-inner-overlay"></div>
 
-        <!-- NỘI DUNG CHÍNH (NẰM TRÊN KHUNG HOA) -->
         <div class="content-container" id="main-content">
             <div class="title-label">Lễ Dạm Ngõ</div>
 
             <div class="center-group">
-                <!-- Tên Thuỳ Dương (Ngắt dòng) -->
-                <div class="name-txt name-l">Thuỳ&#10;Dương</div>
+
+                <div class="name-txt name-l">Thùy&#10;Dương</div>
 
                 <div class="song-hy-wrap">
                     <div class="song-hy-icon">囍</div>
                 </div>
 
-                <!-- Tên Minh Triết (Ngắt dòng) -->
+
                 <div class="name-txt name-r">Minh&#10;Triết</div>
             </div>
 
@@ -538,32 +538,28 @@
 
             <div class="footer-date-container">
                 <div class="solar-date">22 . 03 . 2026</div>
-                <div class="lunar-date">Nhằm ngày 04 . 02 năm Bính Ngọ</div>
+                <div class="lunar-date">Nhằm 04 . 02 Bính Ngọ</div>
             </div>
         </div>
 
-        <!-- HOA GÓC TRÊN TRÁI -->
         <div class="flower-corner fc-tl">
-            <img src="2.png" alt="hoa góc trên trái">
+            <img src="2.png" alt="">
         </div>
 
-        <!-- HOA GÓC TRÊN PHẢI -->
         <div class="flower-corner fc-tr">
-            <img src="2.png" alt="hoa góc trên phải">
+            <img src="2.png" alt="">
         </div>
 
-        <!-- HOA GÓC DƯỚI TRÁI -->
         <div class="flower-corner fc-bl">
-            <img src="2.png" alt="hoa góc dưới trái">
+            <img src="2.png" alt="">
         </div>
 
-        <!-- HOA GÓC DƯỚI PHẢI -->
         <div class="flower-corner fc-br">
-            <img src="2.png" alt="hoa góc dưới phải">
+            <img src="2.png" alt="">
         </div>
 
 
-        <!-- HIỆU ỨNG CÁNH HOA VÀ LẤP LÁNH -->
+
         <div id="fx-layer"></div>
     </div>
 
@@ -582,7 +578,6 @@
 
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
-            // Chu kỳ 13 giây để quan khách ngắm nền hoa đẹp
             setInterval(runPresentationLoop, 13000);
 
             const fx = document.getElementById('fx-layer');
